@@ -18,6 +18,13 @@
     @apply font-graphik font-light text-lg md:text-2xl;
   }
 
+  .section_title {
+    @apply text-2xl tracking-widest font-graphik font-light text-center my-10 p-2;
+  }
+  .input {
+    @apply py-1 pl-1 w-full text-lg text-[#e9f1f4] bg-transparent border-[0.2px] border-dotted;
+  }
+
   @font-face {
     font-family: queens Trial;
     src: url("../public/fonts/._QueensTrial-Regular.ttf") format(ttf);

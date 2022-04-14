@@ -1,7 +1,4 @@
-import { useRouter } from "next/react";
-
 function Services({ skill, children }) {
-  const router = useRouter();
   return (
     <>
       <div
