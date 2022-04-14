@@ -1,16 +1,32 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+  font-family: "graphikthin";
+  font-style: thin;
+  font-weight: 100;
+  src: local(""), url("/fonts/._QueensTrial-Regular.ttf") format("ttf");
+} */
+
+@layer components {
+  body {
+    @apply bg-[#121921] text-[#E9F1F4];
+  }
+
+  p {
+    @apply font-graphik font-light text-lg md:text-2xl;
+  }
+
+  @font-face {
+    font-family: queens Trial;
+    src: url("../public/fonts/._QueensTrial-Regular.ttf") format(ttf);
+  }
+
+  @font-face {
+    font-family: Graphik;
+    src: url("../public/fonts/GraphikThin.otf") format(otf);
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+/* my-project\public\fonts\GraphikThin.otf */
