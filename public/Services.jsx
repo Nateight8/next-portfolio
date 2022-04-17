@@ -1,15 +1,27 @@
-function Services({ skill, children }) {
+import Service from "./Service";
+
+function Services() {
   return (
     <>
-      <div
-        onClick={() => router.push("/about")}
-        className="h-screen  flex flex-col items-center justify-center sm:p-8 w-full sm:w-3/4 md:w-2/3 mx-auto "
-      >
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-queensTrial mb-8 capitalize">
-          {skill}
-        </h2>
-        {children}
+      <div className="section_title ">
+        <h2 className="">Services</h2>
       </div>
+
+      <Service skill="ux designer">
+        <p className="text-center">
+          Maybe an unpopular opinion: the word "passionate" is over-used, so
+          I'll rather say that I am a skilled user experience designer and for
+          over three years I have learnt the best approach to better user
+          experience design - user-centric!
+        </p>
+      </Service>
+      <Service skill="frontend dev">
+        <p className="text-center">
+          Oh...less I forget to add, I am a User Experience designer who codes.
+          I love react so much that there's nothing more to add in my bio. I am
+          very product using react with tailwindcss
+        </p>
+      </Service>
     </>
   );
 }

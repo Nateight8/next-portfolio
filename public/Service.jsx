@@ -1,29 +1,16 @@
 import React from "react";
 import Services from "./Services";
 
-function Service() {
+function Service({ skill, children }) {
   return (
-    <>
-      <div className="my-10">
-        <h2 className="text-2xl tracking-widest font-graphik font-light text-center">
-          Services
+    <div>
+      <div className="h-screen  flex flex-col items-center justify-center sm:p-8 w-[95%] sm:w-3/4 md:w-2/3 mx-auto ">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-queensTrial mb-8 capitalize">
+          {skill}
         </h2>
+        {children}
       </div>
-      <Services skill="ux design">
-        <p className="text-center">
-          Maybe an unpopular opinion: the word "passionate" is over-used, so
-          I'll rather say that I am a skilled user experience designer and for
-          over three years I have learnt the best approach to better user
-          experience design - user-centric!
-        </p>
-      </Services>
-      <Services skill="Frontend Dev">
-        <p className="text-center">
-          Oh...less I forget to add, I am a User Experience designer who codes.
-          I love react and tailwind, they are a match made in heaven
-        </p>
-      </Services>
-    </>
+    </div>
   );
 }
 

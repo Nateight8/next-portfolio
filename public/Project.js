@@ -1,20 +1,39 @@
 import React from "react";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-function Project({ project }) {
+function Project({ name }) {
+  const router = useRouter();
+  const [animating, setIsAnimating] = useState(false);
+
+  const handleClick = () => {
+    setIsAnimating(!animating);
+    router.push("/projectpage");
+  };
+
   return (
-    <div className="h-screen relative w-full">
-      <div className="absolute bo  left-1/2 -translate-x-1/2  bottom-[15%] h-full w-full">
-        <div className="bg-red-500 h-[45vh] w-[45vh] absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 "></div>
-        <div className="mx-auto w-full flex flex-col items-center absolute bottom-8">
-          <h2 className=" -mt-16 text-7xl md:text-9xl  text-center font-queensTrial font-light">
-            {project}
-          </h2>
-          <p className="tracking-widest capitalize whitespace-nowrap">
-            Role: UX Designer
-          </p>
-        </div>
-      </div>
-    </div>
+    <section className="h-screen  w-full  relative">
+      <button
+        onClick={handleClick}
+        className="h-full w-full flex flex-col items-center justify-center  "
+      >
+        <motion.div
+          whileTap={{ scale: 0.9, zIndex: -1 }}
+          className="bg-red-700 h-[45vh] w-[45vh] z-10 "
+        ></motion.div>
+        <h2 className=" -mt-8 text-7xl md:text-9xl font-light  text-center font-queensTrial">
+          {name}
+        </h2>
+        <motion.p
+          animate={{ x: animating ? -100 : 0 }}
+          transition={{ duration: 5 }}
+          className="tracking-widest capitalize absolute left-[50%]  bottom-[15%]"
+        >
+          Role: UX Designer
+        </motion.p>
+      </button>
+    </section>
   );
 }
 

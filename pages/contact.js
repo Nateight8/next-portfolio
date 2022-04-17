@@ -6,7 +6,7 @@ function Contact() {
       <div className=" bg-[#E9F1F4] mx-auto w-full">
         <div className=" w-[80%] mx-auto text-[#121921] py-12 flex flex-col items-center justify-center">
           <h1 className="text-5xl md:text-7xl mb-4 font-queensTrial">
-            Contact me
+            Get in touch
           </h1>
           <p className=" text-3xl font-thin md:text-4xl">Lets work together</p>
         </div>
